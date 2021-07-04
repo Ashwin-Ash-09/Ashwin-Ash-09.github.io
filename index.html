@@ -1,0 +1,151 @@
+<!doctype html>
+<html ng-app="calculateMarks">
+
+<head>
+    <title>TN 12th Marks Calculator - 2021</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="TN 12th Marks Calculator, TN +2 Marks Calculator, tn results, tn marks 2021">
+    <meta name="keywords" content="tn marks, tn 12th marks, tn marks 2021">
+    <meta name="author" content="Anand Dhanapal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css">
+    <style type="text/css">
+    .container {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    body {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .disclaimer {
+        text-align: center;
+        width: 95%;
+        margin: 10px auto;
+    }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MEG85GPY6J"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MEG85GPY6J');
+</script>
+</head>
+
+<body ng-controller="calculateMarkController">
+    <div class="container">
+        <div style="text-align: center;">
+          <img src="logotn.png" width="200">
+        </div>
+        <h2 style="text-align: center">+2 Marks Calculator - 2021</h2>
+        <p>Note: Calculating the marks based on the new rules that Tamil Nadu Government has released. Please find the Government Press Release on the same <a target="_blank" href="DIPR-P.R NO.328-Hon'ble CM Press Release - 12th Std-Mark System -Date 26.6.2021.pdf">here.</a></p>
+        <p><i>We do not store any information from this page. It just acts as a calculator based on your marks.</i></p>
+        <hr>
+        <h3>SSLC Marks (50%)</h3>
+  <p>Average of top 3 subjects will be calculated based on the marks below.</p>
+        <hr>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Language 1</label>
+            <input name="postalCode" maxlength="3" ng-model="sslcLanguage1" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Language 2</label>
+            <input name="postalCode" maxlength="3" ng-model="sslcLanguage2" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Mathematics</label>
+            <input name="postalCode" maxlength="3" ng-model="sslcMaths" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Science</label>
+            <input name="postalCode" maxlength="3" ng-model="sslcScience" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Social Science</label>
+            <input name="postalCode" maxlength="3" ng-model="sslcSocialScience" placeholder="100" required >
+        </md-input-container>
+        <hr>
+        <h3>+1 Marks (20%)</h3>
+  <p>Average of 20% marks in each subject's Written Exam mark will be calculated based on the marks below.</p>  
+        <hr>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 1 [Lang 1] (incl. internal - 10 marks)</label>
+            <input name="plus1Subject1" maxlength="3" ng-model="plus1Subject1" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 2 [Lang 2] (incl. internal - 10 marks)</label>
+            <input name="plus1Subject2" maxlength="3" ng-model="plus1Subject2" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 3 [Maths] (incl. internal - 10 marks)</label>
+            <input name="plus1Subject3" maxlength="3" ng-model="plus1Subject3" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 4 (incl. practical - 30 marks)</label>
+            <input name="plus1Subject4" maxlength="3" ng-model="plus1Subject4" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 5 (incl. practical - 30 marks)</label>
+            <input name="plus1Subject5" maxlength="3" ng-model="plus1Subject5" placeholder="100" required >
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 6 (incl. practical - 30 marks)</label>
+            <input name="plus1Subject6" maxlength="3" ng-model="plus1Subject6" placeholder="100" required >
+        </md-input-container>
+        <hr>
+        <h3>+2 Marks (30% - Auto filled - Practical+Internal)</h3>
+        <hr>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 1 [Lang 1] (incl. internal - 10 marks)</label>
+            <input name="plus2Subject1" maxlength="2" ng-model="plus2Subject1" placeholder="30" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 2 [Lang 2] (incl. internal - 10 marks)</label>
+            <input name="plus2Subject2" maxlength="2" ng-model="plus2Subject2" placeholder="30" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 3 [Maths] (incl. practical - 30 marks)</label>
+            <input name="plus2Subject3" maxlength="2" ng-model="plus2Subject3" placeholder="30" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 4 (incl. practical - 30 marks)</label>
+            <input name="plus2Subject4" maxlength="2" ng-model="plus2Subject4" placeholder="30" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 5 (incl. practical - 30 marks)</label>
+            <input name="plus2Subject5" maxlength="2" ng-model="plus2Subject5" placeholder="30" required>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Subject 6 (incl. practical - 30 marks)</label>
+            <input name="plus2Subject6" maxlength="2" ng-model="plus2Subject6" placeholder="30" required>
+        </md-input-container>
+        
+        <hr>
+        <div style="margin: 10px; text-align: center;">
+            <md-button name="calculateScore" class="md-raised" ng-click="calculateMyMark()">Calculate My Mark</md-button>
+        </div>
+        <div style="border:1px solid; padding: 10px; text-align: center;">
+            <h3>Calculated Marks: {{totalMarks}}</h3>
+        </div>
+    </div>
+    <div class="disclaimer"><br />
+        <hr>
+        <strong>*Disclaimer:</strong><br /> This is not an official website of Tamil Nadu government. <br />
+        This website helps parents and students to calculate +2 marks following the <a href="DIPR-P.R NO.328-Hon'ble CM Press Release - 12th Std-Mark System -Date 26.6.2021.pdf" target="_blank">norms published by TN Govt</a>. Please be advised, the calculation may not be 100% accurate.
+        <hr>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+    <!-- Angular Material Javascript now available via Google CDN; version 1.2.1 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.js"></script>
+    <script type="text/javascript" src="./controller.js"></script>
+</body>
+
+</html>
